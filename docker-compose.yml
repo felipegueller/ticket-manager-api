@@ -1,0 +1,10 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_dotnet_10
+    restart: always
+    environment:
+      MYSQL_DATABASE: admin
+      MYSQL_ROOT_PASSWORD: admin
+    ports:
+      - "3306:3306"
