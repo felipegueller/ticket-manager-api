@@ -15,7 +15,7 @@ public class TicketManagerDbContext(
         modelBuilder.ApplyConfiguration(new SuportAgentEntityConfiguration());
 
         // Apply seeds
-        DatabaseSeeder.SeedUsers(modelBuilder);
-        DatabaseSeeder.SeedTickets(modelBuilder);
+        // DatabaseSeeder.SeedUsers(modelBuilder);
+        // DatabaseSeeder.SeedTickets(modelBuilder);
     }
 }

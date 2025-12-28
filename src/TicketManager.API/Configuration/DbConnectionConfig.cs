@@ -4,19 +4,17 @@ using TicketManager.Infrastructure.Contexts;
 
 namespace TicketManager.API.Configuration;
 
-public static class DependencyInjectionConfig
+public static class DbConnectionConfig
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         string connectionString = configuration.GetConnectionString("DefaultConnection")
-        ?? throw new Exception("Connection string 'DefaultConnection' not found.");
+            ?? throw new Exception("Connection string 'DefaultConnection' not found.");
 
         services.AddDbContextPool<TicketManagerDbContext>(options =>
             {
                 options.UseMySql(connectionString,
-                    ServerVersion.Create(
-                        new Version("8.0.44"),
-                        Pomelo.EntityFrameworkCore.MySql.Infrastructure.ServerType.MySql),
+                    ServerVersion.AutoDetect(connectionString),
                     m =>
                     {
                         m.MigrationsAssembly("TicketManager.Infrastructure");
