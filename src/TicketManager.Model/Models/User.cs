@@ -1,4 +1,5 @@
 using TicketManager.Model.ModelsNotMapped.Exceptions;
+using TicketManager.Model.Utils;
 
 namespace TicketManager.Model.Models;
 
@@ -27,7 +28,16 @@ public class User : BaseModel
         if (string.IsNullOrWhiteSpace(Password))
             throw new ModelException("Password cannot be null or empty.");
 
-        if (string.IsNullOrEmpty(this.Email))
-            throw new ModelException("E-mail cannot be null or empty.");
+        if (!EmailUtils.IsValidEmail(Email))
+            throw new ModelException("E-mail is not valid.");
+    }
+
+    public void UpdatePassword(string newPassword)
+    {
+        if (string.IsNullOrWhiteSpace(newPassword))
+            throw new ModelException("Password cannot be null or empty.");
+
+        this.Password = newPassword;
+        this.UpdatedAt = DateTime.Now;
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-// ...existing code...
+
 namespace TicketManager.API.Configuration;
 
 public static class JwtConfiguration
@@ -35,4 +35,3 @@ public static class JwtConfiguration
         return services;
     }
 }
-// ...existing code...

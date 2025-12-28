@@ -13,6 +13,9 @@ public SuportAgentEntityConfiguration() : base("suport_agents")
     {
         base.Configure(builder);
 
+        builder.HasIndex(x => x.Email)
+            .IsUnique();
+
         builder.Property(p => p.Name)
             .HasColumnName("name")
             .IsRequired()

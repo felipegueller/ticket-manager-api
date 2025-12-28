@@ -10,7 +10,7 @@ public class EmailUtils
         RegexOptions.Compiled | RegexOptions.IgnoreCase
     );
 
-    public static bool IsValidEmail(string email)
+    public static bool IsValidEmail(string? email)
     {
         if (string.IsNullOrWhiteSpace(email)) return false;
 

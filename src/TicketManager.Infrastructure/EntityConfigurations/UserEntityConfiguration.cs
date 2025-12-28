@@ -13,6 +13,12 @@ public class UserEntityConfiguration : BaseEntityConfiguration<User>
     {
         base.Configure(builder);
 
+        builder.HasIndex(p => p.Username)
+            .IsUnique();
+
+        builder.HasIndex(p => p.Email)
+            .IsUnique();
+
         builder.Property(p => p.Username)
             .HasColumnName("username")
             .IsRequired()
