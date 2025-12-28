@@ -1,5 +1,5 @@
 using TicketManager.Model.Enums;
-using TicketManager.Model.Exceptions;
+using TicketManager.Model.ModelsNotMapped.Exceptions;
 
 namespace TicketManager.Model.Models;
 

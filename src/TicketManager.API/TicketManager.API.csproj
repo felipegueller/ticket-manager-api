@@ -18,6 +18,7 @@
     <ProjectReference Include="..\TicketManager.Model\TicketManager.Model.csproj" />
     <ProjectReference Include="..\TicketManager.DTO\TicketManager.DTO.csproj" />
     <ProjectReference Include="..\TicketManager.Infrastructure\TicketManager.Infrastructure.csproj" />
+    <ProjectReference Include="..\TicketManager.Service\TicketManager.Service.csproj" />
   </ItemGroup>
 
 </Project>

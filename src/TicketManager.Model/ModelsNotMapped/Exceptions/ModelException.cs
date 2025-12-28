@@ -1,4 +1,4 @@
-namespace TicketManager.Model.Exceptions;
+namespace TicketManager.Model.ModelsNotMapped.Exceptions;
 
 public class ModelException : Exception
 {
